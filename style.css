@@ -1,0 +1,16 @@
+#editor { 
+    position: absolute;
+    top: 10rem;
+    right: 10rem;
+    bottom: 10rem;
+    left: 10rem;
+}
+body {
+    background-color: #383A59;
+}
+h1 {
+    color: #BD93F9;
+}
+pre {
+    color: #BD93F9;
+}
