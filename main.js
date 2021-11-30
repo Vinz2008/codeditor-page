@@ -1,4 +1,7 @@
-
+var editor = ace.edit("mycode");
+editor.setTheme("ace/theme/dracula");
+editor.session.setMode("ace/mode/python");
+editor.resize()
 function outf(text) { 
     var mypre = document.getElementById("output"); 
     mypre.innerHTML = mypre.innerHTML + text; 
@@ -27,10 +30,7 @@ function runit() {
     });
  } 
 
- var editor = ace.edit("editor");
- editor.setTheme("ace/theme/dracula");
- editor.session.setMode("ace/mode/python");
- editor.resize()
+
  
  var myCode = editor.getSession().getValue();
  function saveStaticDataToFile() {
