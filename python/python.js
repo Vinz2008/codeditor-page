@@ -30,11 +30,10 @@ function runit() {
     });
  } 
 
-
- 
  var myCode = editor.getSession().getValue();
  function saveStaticDataToFile() {
     var blob = new Blob([myCode],
     { type: "text/plain;charset=utf-8" });
     saveAs(blob, "static.txt");
-}
+ }
+ 
