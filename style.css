@@ -5,8 +5,16 @@
     bottom: 10rem;
     left: 10rem;
 }
+
+#markdown-content {
+    top: 1rem;
+    right: 1rem;
+    bottom: 2rem;
+    left: 1rem;
+}
 body {
     background-color: #383A59;
+    color: #BD93F9;
 }
 h1 {
     color: #BD93F9;
@@ -17,6 +25,7 @@ pre {
 }
 button {
     border: none;
+    background-color: #8BE9FD;
     color: white;
     padding: 9px 20px;
     text-align: center;
@@ -30,6 +39,10 @@ button {
 .button-screen-div {
     text-align: center;  
 
+}
+
+.other-button {
+    color: black;
 }
 .button-screen {
     background-color: #48D06D;
