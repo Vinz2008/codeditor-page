@@ -1,0 +1,8 @@
+{
+  "name": "Small Sharp Tool",
+  "description": "This app does one little thing, and does it well.",
+  "keywords": [
+    "editor",
+  ],
+  "image": "heroku/python",
+}
