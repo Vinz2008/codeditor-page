@@ -5,7 +5,13 @@
     bottom: 10rem;
     left: 10rem;
 }
-
+#mycode1 { 
+    position: absolute;
+    top: 40rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 10rem;
+}
 #markdown-content {
     top: 1rem;
     right: 1rem;

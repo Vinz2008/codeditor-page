@@ -4,14 +4,26 @@
   <meta charset="utf-8"/>
   <title>Markdown</title>
   <link rel="stylesheet" type="text/css" href="../style.css">
-</head>
+  <script src="../js/FileSaver.js/dist/FileSaver.js" type="text/javascript"></script>
+  <script src="../js/FileSaver.js/dist/FileSaver.min.js" type="text/javascript"></script>
+  <script src="../js/FileSaver.js/dist/FileSaver.min.js.map" type="text/javascript"></script>
+  </head>
 <body>
+  
     <h1>Markdown</h1>
-    <div id="mycode"> ## hello </div>
+    <div id="mycode"> ## hello 
+
+
+    </div>
+    <button class="other-button" type="button" onclick="saveStaticDataToFile();">Click to Save</button>
+    <div id="mycode1">
     <h2>output</h2>
   <div id="markdown-content"></div>
+
+</div>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="../js/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
   <script src="markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>

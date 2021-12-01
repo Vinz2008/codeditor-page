@@ -34,6 +34,6 @@ function runit() {
  function saveStaticDataToFile() {
     var blob = new Blob([myCode],
     { type: "text/plain;charset=utf-8" });
-    saveAs(blob, "static.txt");
+    saveAs(blob, "test.py");
  }
  
