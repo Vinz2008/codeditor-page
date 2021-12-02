@@ -38,3 +38,6 @@ function runit() {
     saveAs(blob, "test.py");
  }
  
+ editor.session.on('change', function(delta) {
+console.log(editor.getSession().getValue())
+ });
