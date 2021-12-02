@@ -6,4 +6,7 @@ def hello_world():
     if request.method == 'POST':
         print('Incoming..')
         incoming = request.get_json()
-https://python-interpreter1.herokuapp.com/
+    else:
+        message = {'greeting':'Hello from Flask!'}
+        return jsonify(message)
+# https://python-interpreter1.herokuapp.com/

@@ -1,2 +1,3 @@
-web: export FLASK_APP=backend/python-interpreter
+web: export FLASK_APP=backend/app
+web: cd backend
 web: flask run
