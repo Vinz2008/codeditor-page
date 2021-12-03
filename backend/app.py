@@ -16,9 +16,9 @@ def hello_world():
         try:
             outcoming = subprocess.check_output(['python3','scripts.py'])
         except subprocess.CalledProcessError as err:
-            print(err)
+            outcoming = err
     else:
         if len(incoming) != 0:
-            message = incoming
+            message = outcoming
         return jsonify(message)
 # https://python-interpreter1.herokuapp.com/
