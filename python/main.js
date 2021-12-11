@@ -3,33 +3,23 @@ editor.setTheme("ace/theme/dracula");
 editor.session.setMode("ace/mode/python");
 editor.resize()
 
-function outf(text) { 
-    var mypre = document.getElementById("output"); 
-    mypre.innerHTML = mypre.innerHTML + text; 
-} 
-function builtinRead(x) {
-    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-            throw "File not found: '" + x + "'";
-    return Sk.builtinFiles["files"][x];
+function runit(){
+    code = editor.getSession().getValue()
+    document.getElementById("pythonscript").innerHTML = code
+    output = brython()
+    console.stdlog = console.log.bind(console);
+    console.logs = [];
+    console.log = function(){
+    console.logs.push(Array.from(arguments));
+    console.stdlog.apply(console, arguments);
 }
+    document.getElementById("output").innerHTML = console.logs
+    console.log(brython())
+    console.logs.length = 0;
+    
+    
 
-function runit() { 
-    var prog = document.getElementById("mycode").value; 
-    var mypre = document.getElementById("output"); 
-    mypre.innerHTML = ''; 
-    Sk.pre = "output";
-    Sk.configure({output:outf, read:builtinRead}); 
-    (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
-    var myPromise = Sk.misceval.asyncToPromise(function() {
-        return Sk.importMainWithBody("<stdin>", false, prog, true);
-    });
-    myPromise.then(function(mod) {
-        console.log('success');
-    },
-        function(err) {
-        console.log(err.toString());
-    });
- } 
+}
 
  var myCode = editor.getSession().getValue();
  function saveStaticDataToFile() {

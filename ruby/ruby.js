@@ -10,12 +10,12 @@ var myCode = editor.getSession().getValue();
     saveAs(blob, "test.rb");
  }
 function compile() {
-  const input = document.getElementById("input");
-  const transpiled = document.getElementById("transpiled");
-  const output = document.getElementById("output");
+  output = document.getElementById("output");
 
-  transpiled.value = Opal.compile(input.value);
-  output.value = eval(transpiled.value);
+  transpiled = Opal.compile(editor.getSession().getValue());
+  document.getElementById("transpiled").innerHTML = Opal.compile(editor.getSession().getValue());
+  /*output.innerHTML = eval(transpiled);*/
+  document.getElementById("output").innerHTML = eval(transpiled)
 }
 
-document.onload = function() { compile(); }
+
