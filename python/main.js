@@ -5,20 +5,9 @@ editor.resize()
 
 function runit(){
     code = editor.getSession().getValue()
-    document.getElementById("pythonscript").innerHTML = code
-    output = brython()
-    console.stdlog = console.log.bind(console);
-    console.logs = [];
-    console.log = function(){
-    console.logs.push(Array.from(arguments));
-    console.stdlog.apply(console, arguments);
-}
-    document.getElementById("output").innerHTML = console.logs
-    console.log(brython())
-    console.logs.length = 0;
-    
-    
-
+    $.post("http://localhost:8000/input",{code: code});
+    output = $.get("http://localhost:8000/output")
+    console.log("output")
 }
 
  var myCode = editor.getSession().getValue();

@@ -11,15 +11,22 @@ function run(code) {
 fs.writeFile('script.py',code, function (err) {
     if (err) throw err; {
     console.log("");
-    }
-});
+    }});
 exec("python3 script.py", (err, stdout, stderr) => {
     var output = stdout
     console.log(output)
-    app.get('/', (req, res) => res.send(output));
-    app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+   /* app.get('/output', (req, res) => res.send(output));
+    app.listen(port, () => console.log(`Api output listening on port ${port}!`));
+*/
+    return output
 })
 }
 
-run("print('This is my api')")
+app.post('/input', (req, res) => {
+code = req.body.code;
 
+app.get('/output', (req, res) => res.send(run(code)));
+
+});
+
+app.listen(port, () => console.log(`Api input listening on port ${port}!`));
