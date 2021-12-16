@@ -21,7 +21,7 @@ exec("python3 script.py", (err, stdout, stderr) => {
     return output
 })
 }
-
+var code = ""
 app.post('/input', (req, res) => {
 code = req.body.code;
 
