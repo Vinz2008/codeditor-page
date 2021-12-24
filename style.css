@@ -66,3 +66,27 @@ iframe {
 #scratch-h3 {
     font-size: 15px;
 }
+
+#parameters_div {
+    top: 50%;
+    left: 50%;
+    width: 30em;
+    height: 18em;
+    margin-top: -9em;
+    margin-left: -15em;
+    border: 1px solid #50FA7B;
+    background-color: #383A59;
+    position: absolute;
+    z-index:1000;
+    visibility: hidden; 
+    display:inline;
+}
+
+#cross_button {
+    display: inline-block;
+    display:      block;
+    margin-left:  auto;
+    margin-right: 0;
+}
+
+  
