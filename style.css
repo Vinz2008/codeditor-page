@@ -80,6 +80,14 @@ iframe {
     z-index:1000;
     visibility: hidden; 
     display:inline;
+    border-radius: 20px;
+}
+
+#parameters_button {
+    display: inline-block;
+    display: block;
+    margin-left:  auto;
+    margin-right: 0;
 }
 
 #cross_button {
@@ -88,5 +96,7 @@ iframe {
     margin-left:  auto;
     margin-right: 0;
 }
+
+
 
   
