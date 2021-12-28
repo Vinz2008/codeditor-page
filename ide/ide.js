@@ -2,6 +2,9 @@ var editor = ace.edit("mycode");
 editor.setTheme("ace/theme/dracula");
 editor.session.setMode("ace/mode/python");
 editor.setOptions({
+    maxLines: 33,
+    minLines: 28,
+    autoScrollEditorIntoView: true,
     keyboardHandler: null,
 })
 editor.resize()
