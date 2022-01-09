@@ -1,3 +1,4 @@
+/*
 fetch('/python')
     .then(function (response) {
         return response.text();
@@ -14,22 +15,29 @@ fetch('/python')
         console.log('GET response as JSON:');
         console.log(json); // Here’s our JSON object
     })
-
-fetch('/python', {
+*/
+function run() {
+    const params = {
+        code: "print('hello')", 
+    };
+    const options = {
+        method: 'POST',
+        body: JSON.stringify( params )  
+    };
+fetch(/*'https://python-interpreter1.herokuapp.com/input'*/'http://localhost:8000/input', options, {
+    
 
     // Specify the method
-    method: 'POST',
 
     // JSON
     headers: {
         'Content-Type': 'application/json'
     },
+    
 
     // A JSON payload
-    body: JSON.stringify({
-        "greeting": "Hello from the browser!"
-    })
-}).then(function (response) { // At this point, Flask has printed our JSON
+
+}).then(function (response) { 
     return response.text();
 }).then(function (text) {
 
@@ -38,3 +46,4 @@ fetch('/python', {
     // Should be 'OK' if everything was successful
     console.log(text);
 });
+}

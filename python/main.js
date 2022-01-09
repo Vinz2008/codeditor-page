@@ -4,10 +4,12 @@ editor.session.setMode("ace/mode/python");
 editor.resize()
 
 function runit(){
-    code = editor.getSession().getValue()
-    $.post("http://localhost:8000/input",{code: code});
-    output = $.get("http://localhost:8000/output")
-    console.log("output")
+    var code = editor.getSession().getValue()
+    $.post("https://python-interpreter1.herokuapp.com/input",{code: code} ,function(result) {
+        console.log(result)
+
+    });
+    /*console.log(run())*/
 }
 
  var myCode = editor.getSession().getValue();
