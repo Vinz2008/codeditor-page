@@ -24,7 +24,7 @@ function run() {
         method: 'POST',
         body: JSON.stringify( params )  
     };
-fetch(/*'https://python-interpreter1.herokuapp.com/input'*/'http://localhost:8000/input', options, {
+fetch('https://python-interpreter1.herokuapp.com/input'/*'http://localhost:8000/input'*/, options, {
     
 
     // Specify the method
