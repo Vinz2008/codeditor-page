@@ -22,24 +22,15 @@ function run() {
     };
     const options = {
         method: 'POST',
-        body: JSON.stringify( params )  
+        body: JSON.stringify( params ), 
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        },
         
     };
-fetch('https://python-interpreter1.herokuapp.com/input'/*'http://localhost:8000/input'*/, options, {
-    
-
-    // Specify the method
-
-    // JSON
-    headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-    },
-    
-
-    // A JSON payload
-
-}).then(function (response) { 
+fetch('https://python-interpreter1.herokuapp.com/input'/*'http://localhost:8000/input'*/, options
+).then(function (response) { 
     return response.text();
 }).then(function (text) {
 
