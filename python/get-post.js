@@ -23,6 +23,7 @@ function run() {
     const options = {
         method: 'POST',
         body: JSON.stringify( params )  
+        
     };
 fetch('https://python-interpreter1.herokuapp.com/input'/*'http://localhost:8000/input'*/, options, {
     
@@ -31,7 +32,8 @@ fetch('https://python-interpreter1.herokuapp.com/input'/*'http://localhost:8000/
 
     // JSON
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
     },
     
 
