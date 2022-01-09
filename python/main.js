@@ -5,11 +5,11 @@ editor.resize()
 
 function runit(){
     var code = editor.getSession().getValue()
-    $.post("https://python-interpreter1.herokuapp.com/input",{code: code} ,function(result) {
+    /*$.post("https://python-interpreter1.herokuapp.com/input",{code: code} ,function(result) {
         console.log(result)
 
-    });
-    /*console.log(run())*/
+    });*/
+    console.log(run())
 }
 
  var myCode = editor.getSession().getValue();
