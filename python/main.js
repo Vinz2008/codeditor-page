@@ -9,7 +9,7 @@ function runit(){
         console.log(result)
 
     });*/
-    console.log(run())
+    console.log(run(code))
 }
 
  var myCode = editor.getSession().getValue();

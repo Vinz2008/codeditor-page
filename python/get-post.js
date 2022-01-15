@@ -16,9 +16,9 @@ fetch('/python')
         console.log(json); // Here’s our JSON object
     })
 */
-function run() {
+function run(code) {
     const params = {
-        code: "print('hello')", 
+        code: code, 
     };
     const options = {
         method: 'POST',
