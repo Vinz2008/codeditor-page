@@ -17,6 +17,9 @@ fetch('/python')
     })
 */
 function run(code) {
+    reg1 = /"/g
+    code = code.replace(reg1,"'")
+    console.log("input after regex: " + code)
     const params = {
         code: code, 
     };
@@ -40,8 +43,10 @@ fetch('https://python-interpreter1.herokuapp.com/input'/*'http://localhost:8000/
     console.log(text);
     globalThis.output = text
 });
-reg = /\n/g
-output = output.replace(reg, "<br>")
-console.log("output after reegex:" + output)
+reg2 = /\n/g
+var newOutput
+newOutput = output.toString().replace(reg2, "<br>")
+output = newOutput
+console.log("output after regex:" + output)
 return output;
 }
