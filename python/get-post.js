@@ -38,5 +38,10 @@ fetch('https://python-interpreter1.herokuapp.com/input'/*'http://localhost:8000/
 
     // Should be 'OK' if everything was successful
     console.log(text);
+    globalThis.output = text
 });
+reg = /\n/g
+output = output.replace(reg, "<br>")
+console.log("output after reegex:" + output)
+return output;
 }

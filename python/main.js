@@ -9,7 +9,11 @@ function runit(){
         console.log(result)
 
     });*/
-    console.log(run(code))
+    console.log("code: " + code)
+    output = run(code)
+    console.log("output: " + output)
+    output_div = document.getElementById("output")
+    output_div.innerHTML = output
 }
 
  var myCode = editor.getSession().getValue();
