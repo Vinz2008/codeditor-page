@@ -21,6 +21,11 @@
 body {
     background-color: #383A59;
     color: #BD93F9;
+    margin: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
 }
 h1 {
     color: #BD93F9;
@@ -96,6 +101,17 @@ iframe {
     display:      block;
     margin-left:  auto;
     margin-right: 0;
+}
+
+#home_link {
+    color: #BD93F9;
+}
+
+nav {
+    background-color: #282A36;
+    height: 45px;
+    margin: 0 0;
+    padding: 0
 }
 
 
