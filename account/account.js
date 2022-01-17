@@ -1,3 +1,9 @@
+const whenSignedIn = document.getElementById('whenSignedIn');
+const whenSignedOut = document.getElementById('whenSignedOut')
+const signInBtn = document.getElementById('signInBtn')
+const signOutBtn = document.getElementById('signOutBtn')
+const userDetails = document.getElementById('userDetails')
+
 var firebaseConfig = {
     apiKey: "AIzaSyDBL3upiS5cgx8Q33FTYaBQivGowZ_u_o4",
     authDomain: "codeditor-8afc9.firebaseapp.com",
@@ -8,27 +14,29 @@ var firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig)
+
 const auth = firebase.auth()
 const database = firebase.firestore()
-var provider = new firebase.auth.GoogleAuthProvider();
+const provider = new firebase.auth.GoogleAuthProvider();
 
-function create_account() {
-firebase.auth()
-  .signInWithRedirect(provider)
-  .then((result) => {
-    var credential = result.credential;
-    var token = credential.accessToken; // for google api
-    var user = result.user;
-    console.log(user);
-    informations_div = document.getElementById('Informations')
-    informations_div.innerHTML = ""
-    informations_div.innerHTML = `name: ${user}`
-    }).catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var credential = error.credential;
-        
-    });
+function signIn() {
+auth.signInWithPopup(provider);
 }
 
+function signOut() {
+auth.signOut();
+}
+
+auth.onAuthStateChanged(user => {
+  if (user) {
+      // signed in
+      whenSignedIn.hidden = false;
+      whenSignedOut.hidden = true;
+      userDetails.innerHTML = `<h3>Hello ${user.displayName}!</h3> <p>User ID: ${user.uid}</p>`;
+  } else {
+      // not signed in
+      whenSignedIn.hidden = true;
+      whenSignedOut.hidden = false;
+      userDetails.innerHTML = '';
+  }
+});
