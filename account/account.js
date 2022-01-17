@@ -16,7 +16,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 
 const auth = firebase.auth()
-const database = firebase.firestore()
+const db = firebase.firestore()
 const provider = new firebase.auth.GoogleAuthProvider();
 
 function signIn() {
@@ -38,5 +38,18 @@ auth.onAuthStateChanged(user => {
       whenSignedIn.hidden = true;
       whenSignedOut.hidden = false;
       userDetails.innerHTML = '';
+  }
+});
+
+auth.onAuthStateChanged(user => {
+
+  if (user) {
+    userRef = db.collection('users');
+    userRef.add({
+      uid: user.uid,
+      name: user.displayName,
+      python_code: ""
+    });
+    console.log("user added")
   }
 });
