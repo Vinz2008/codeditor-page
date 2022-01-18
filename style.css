@@ -1,3 +1,14 @@
+:root {
+    --text-color: #000000;
+    --bkg-color: #fff;
+    --nav-color: green;
+  }
+  body.dark-theme {
+    --text-color: #BD93F9;
+    --bkg-color: #383A59;
+    --nav-color: #282A36;
+  }
+
 #mycode { 
     position: absolute;
     top: 10rem;
@@ -19,8 +30,8 @@
     left: 1rem;
 }
 body {
-    background-color: #383A59;
-    color: #BD93F9;
+    background-color: var(--bkg-color);;
+    color: var(--text-color);
     margin: 0;
     margin-top: 0;
     margin-right: 0;
@@ -28,12 +39,12 @@ body {
     margin-left: 0;
 }
 h1 {
-    color: #BD93F9;
+    color: var(--text-color);
     text-align: center;
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 pre {
-    color: #BD93F9;
+    color: var(--text-color);
 }
 button {
     border: none;
@@ -81,7 +92,7 @@ iframe {
     margin-top: -9em;
     margin-left: -15em;
     border: 1px solid #50FA7B;
-    background-color: #383A59;
+    background-color: var(--bkg-color);;
     position: absolute;
     z-index:1000;
     visibility: hidden; 
@@ -104,12 +115,12 @@ iframe {
 }
 
 #home_link {
-    color: #BD93F9;
+    color: var(--text-color);
 }
 
 
 nav {
-    background-color: #282A36;
+    background-color: var(--nav-color);;
     height: 45px;
     margin: 0 0;
     padding: 0
@@ -123,7 +134,7 @@ nav {
 }
 
 #account_link {
-    color: #BD93F9;
+    color: var(--text-color);
     margin-right: 10px;
     margin-left: auto;
     margin-bottom: auto;

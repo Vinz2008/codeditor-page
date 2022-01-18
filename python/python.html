@@ -3,6 +3,7 @@
 <head>
 <title>Python interpreter</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
+<script type="text/javascript" src="../theme.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="../js/brython/brython.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
@@ -19,11 +20,9 @@
         <a class="nav_div_text"></a>
         <div class="div_account_link">
         <a href="../account/account.html" id="account_link" class="nav_div_text">My account</a>
-        <select id="select_theme">
-            <option value=”dark”>Dark</option>
-            <option value=”light”>Light</option>
-            <option value=”dracula”>Dracula</option>
-        </select>
+        <a>
+            <button id="btn-toggle" onclick="buttonClicked();"></button>
+        </a>
         </div>
     </nav>
 

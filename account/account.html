@@ -7,20 +7,19 @@
     <title>My account</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css"/>
+    <script type="text/javascript" src="../theme.js"></script>
 </head>
 <body>
 
-<nav id="navbar">
+  <nav id="navbar">
     <a id="home_link" href="../index.html" class="nav_div_text">Home</a>
     <a class="nav_div_text"></a>
     <a class="nav_div_text"></a>
     <div class="div_account_link">
     <a href="../account/account.html" id="account_link" class="nav_div_text">My account</a>
-    <select id="select_theme">
-        <option value=”dark”>Dark</option>
-        <option value=”light”>Light</option>
-        <option value=”dracula”>Dracula</option>
-    </select>
+    <a>
+        <button id="btn-toggle" onclick="buttonClicked();"></button>
+    </a>
     </div>
 </nav>
 

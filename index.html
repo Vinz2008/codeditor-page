@@ -4,9 +4,8 @@
 <title>interpreter</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="./theme.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
 </head>
 <body>
 
@@ -16,11 +15,9 @@
     <a class="nav_div_text"></a>
     <div class="div_account_link">
     <a href="account/account.html" id="account_link" class="nav_div_text">My account</a>
-    <select id="select_theme">
-        <option value=”dark”>Dark</option>
-        <option value=”light”>Light</option>
-        <option value=”dracula”>Dracula</option>
-    </select>
+    <a>
+        <button id="btn-toggle" onclick="buttonClicked();"></button>
+    </a>
     </div>
 </nav>
 
@@ -85,7 +82,7 @@
  </span>
 </div>
 
-
+<!--
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-analytics.js";
@@ -107,5 +104,6 @@
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
   </script>
+-->
 </body>
 </html>

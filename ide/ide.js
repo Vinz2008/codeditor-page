@@ -1,5 +1,24 @@
+var theme = localStorage.getItem("theme");
+function setThemeAce() {
+    if (theme == "light") {
+        editor.setTheme("ace/theme/github");
+    } else if (theme == "dark") {
+        editor.setTheme("ace/theme/dracula");
+    }
+}
+
 var editor = ace.edit("mycode");
-editor.setTheme("ace/theme/dracula");
+editor.setTheme("ace/theme/github");
+
+var buttonTheme = document.getElementById('btn-toggle')
+setThemeAce()
+
+buttonTheme.addEventListener("click", function() {
+    setThemeAce();
+
+});
+
+//editor.setTheme("ace/theme/dracula");
 editor.session.setMode("ace/mode/python");
 editor.setOptions({
     maxLines: 33,
@@ -73,4 +92,9 @@ function saveStaticDataToFile() {
     var blob = new Blob([myCode],
     { type: "text/plain;charset=utf-8" });
     saveAs(blob, `code.${extension}`);
+}
+
+if(buttonTheme.clicked == true) {
+    setThemeAce()
+
 }

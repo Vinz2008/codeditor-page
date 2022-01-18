@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <title>Markdown</title>
   <link rel="stylesheet" type="text/css" href="../style.css">
+  <script type="text/javascript" src="../theme.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="../js/FileSaver.js/dist/FileSaver.js" type="text/javascript"></script>
   <script src="../js/FileSaver.js/dist/FileSaver.min.js" type="text/javascript"></script>
@@ -16,11 +17,9 @@
     <a class="nav_div_text"></a>
     <div class="div_account_link">
     <a href="../account/account.html" id="account_link" class="nav_div_text">My account</a>
-    <select id="select_theme">
-        <option value=”dark”>Dark</option>
-        <option value=”light”>Light</option>
-        <option value=”dracula”>Dracula</option>
-    </select>
+    <a>
+        <button id="btn-toggle" onclick="buttonClicked();"></button>
+    </a>
     </div>
 </nav>
   
