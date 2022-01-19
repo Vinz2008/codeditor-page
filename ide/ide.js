@@ -1,5 +1,6 @@
 var theme = localStorage.getItem("theme");
 function setThemeAce() {
+    var theme = localStorage.getItem("theme");
     if (theme == "light") {
         editor.setTheme("ace/theme/github");
     } else if (theme == "dark") {
