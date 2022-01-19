@@ -24,16 +24,18 @@ if (currentTheme == "dark") {
 
 function buttonClicked() {
     var currentTheme = localStorage.getItem("theme");
+    var theme = "light"
     if (currentTheme == "dark") {
         console.log("lightened")
       light()
       var theme = "light"
-    } else {
-    if (currentTheme == "light") {
+    } else if (currentTheme == "light") {
       console.log("darkened")
       dark()
       var theme = "dark"
-    }
+    
+    } else if (currentTheme == "undefined"){
+      localStorage.setItem("theme", "light");
     }
     localStorage.setItem("theme", theme);
   };
