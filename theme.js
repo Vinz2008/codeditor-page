@@ -6,13 +6,18 @@ function dark() {
     r.style.setProperty('--bkg-color', '#383A59');
     r.style.setProperty('--text-color', '#BD93F9');
     r.style.setProperty('--nav-color', '#282A36');
+    r.style.setProperty('--backgroundTop-color', '#383A59');
+    r.style.setProperty('--top-text-color', '#BD93F9');
     btn.innerHTML = "light"
 }
 function light() {
     var rs = getComputedStyle(r);
-    r.style.setProperty('--bkg-color', '#FFFFFF');
+    r.style.setProperty('--bkg-color', '#FBFBFB');
     r.style.setProperty('--text-color', '#000000');
-    r.style.setProperty('--nav-color', 'green');
+    r.style.setProperty('--nav-color', '#fff');
+    r.style.setProperty('--backgroundTop-color', '#4C3AD8');
+    r.style.setProperty('--text-color', '#000000');
+    r.style.setProperty('--top-text-color', '#FFFFFF');
     btn.innerHTML = "dark"
 }
 
