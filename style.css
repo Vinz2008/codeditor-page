@@ -11,10 +11,27 @@
 
 #mycode { 
     position: absolute;
-    top: 10rem;
-    right: 10rem;
+    top: 15rem;
+    right: 50rem;
     bottom: 10rem;
     left: 10rem;
+}
+#code-output {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10rem;
+}
+#save-button {
+    margin-right: 10px;
+    margin-left: auto;
+}
+#big-output {
+    justify-content: flex-end;
+    border:1px solid black;
+    border-radius: 20px;
+    width: 28rem;
+    height: 25rem;
+    text-align: center;
 }
 #mycode1 { 
     position: absolute;

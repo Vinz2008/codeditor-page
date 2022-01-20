@@ -26,21 +26,23 @@
     </nav>
 
 <h1>Python interpreter</h1>
-
-<div id="mycode">print('hello')</div>
 <button class="other-button" type="button" onclick="runit()">Run</button>
 <br>
 <br>
+<button id="save-button" class="other-button" type="button" onclick="saveStaticDataToFile();">Click to Save</button>
+<div id="code-output">
+<div id="mycode">print('hello')</div>
+<div id="big-output">
+<h2>Output</h2>
+<div id="output"></div>
+</div>
+</div>
+
 <script src="../js/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 
 <script src="./main.js" type="text/javascript" charset="utf-8"></script>
 
-<script type="text/python" id="pythonscript">
 
-
-</script>
-
-<button class="other-button" type="button" onclick="saveStaticDataToFile();">Click to Save</button>
 <br>
 <br>
 <br>
@@ -61,8 +63,8 @@
 <br>
 <br>
 <br>
-<h2>Output</h2>
-<div id="output"></div>
+<!--<h2>Output</h2>
+<div id="output"></div>-->
 <script type="text/javascript" src="../theme.js"></script>
 </body>
 </html>

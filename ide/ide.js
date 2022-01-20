@@ -11,6 +11,19 @@ function setThemeAce() {
 var editor = ace.edit("mycode");
 editor.setTheme("ace/theme/github");
 
+function runit(){
+    var code = editor.getSession().getValue()
+    /*$.post("https://python-interpreter1.herokuapp.com/input",{code: code} ,function(result) {
+        console.log(result)
+
+    });*/
+    console.log("code: " + code)
+    output = run(code)
+    console.log("output: " + output)
+    output_div = document.getElementById("output")
+    output_div.innerHTML = output
+}
+
 var buttonTheme = document.getElementById('btn-toggle')
 setThemeAce()
 
