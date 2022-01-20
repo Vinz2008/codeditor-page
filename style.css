@@ -176,3 +176,17 @@ nav {
     font-size: 13px;
     margin-top: 3px;
 }
+
+*::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--background-color);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--text-color);
+    border-radius: 20px;
+    border: 3px solid var(--background-color);
+  }
