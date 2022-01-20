@@ -44,6 +44,13 @@ auth.onAuthStateChanged(user => {
 auth.onAuthStateChanged(user => {
 
   if (user) {
+    result = db
+	.collection('users')
+	.where("uid", isEqualTo: user.uid)
+	.getDocuments();
+    console.log(result)
+
+    
     userRef = db.collection('users');
     userRef.add({
       uid: user.uid,
