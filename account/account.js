@@ -41,16 +41,58 @@ auth.onAuthStateChanged(user => {
   }
 });
 
-auth.onAuthStateChanged(user => {
-
-  if (user) {
-    result = db
+async function isUserAlreadyExisting(user) {
+  resultFunc = await db
 	.collection('users')
-	.where("uid", isEqualTo: user.uid)
-	.getDocuments();
-    console.log(result)
+	.where("uid", "==", user.uid)
+	.get()
+  .then((querySnapshot) => {
+    i = 0
+    querySnapshot.forEach((doc) => {
+        //console.log(`${doc.id} => ${doc.data()}`);
+        i++
+      });
+    if (i < 1) {
+      console.log("null")
+    }
+    console.log("i:" + i)
+});
+    console.log(resultFunc)
+    console.log("out of the loop i:" + i)
+    /*if (i != 0) {
+      console.log("returned true")
+    return true;
+    }
+    else {
+      console.log("returned false")
+      return false;
 
-    
+    }*/
+  return i;
+  }
+
+
+auth.onAuthStateChanged(user => {
+  if (user) {
+    /*result = await db
+	.collection('users')
+	.where("uid", "==", user.uid)
+	.get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        //console.log(`${doc.id} => ${doc.data()}`);
+        i++
+      });
+    if (i <= 1) {
+      console.log("null")
+    }
+    console.log("i:" + i)
+});
+    console.log(result)
+    console.log("out of the loop i:" + i)*/
+    //if (i < 1) {
+      isUserAlreadyExisting(user).then(i => {console.log("i:" + i)})
+      if (i <= 1) {
     userRef = db.collection('users');
     userRef.add({
       uid: user.uid,
@@ -58,5 +100,6 @@ auth.onAuthStateChanged(user => {
       python_code: ""
     });
     console.log("user added")
+  }
   }
 });
