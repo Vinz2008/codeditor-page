@@ -91,8 +91,8 @@ auth.onAuthStateChanged(user => {
     console.log(result)
     console.log("out of the loop i:" + i)*/
     //if (i < 1) {
-      isUserAlreadyExisting(user).then(i => {console.log("i:" + i)})
-      if (i <= 1) {
+      isUserAlreadyExisting(user).then(i => {console.log("i:" + i)//})
+      if (i < 1) {
     userRef = db.collection('users');
     userRef.add({
       uid: user.uid,
@@ -101,5 +101,6 @@ auth.onAuthStateChanged(user => {
     });
     console.log("user added")
   }
+})
   }
 });
