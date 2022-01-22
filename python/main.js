@@ -1,3 +1,19 @@
+var firebaseConfig = {
+    apiKey: "AIzaSyDBL3upiS5cgx8Q33FTYaBQivGowZ_u_o4",
+    authDomain: "codeditor-8afc9.firebaseapp.com",
+    projectId: "codeditor-8afc9",
+    storageBucket: "codeditor-8afc9.appspot.com",
+    messagingSenderId: "1063669641173",
+    appId: "1:1063669641173:web:9b140279152faf33f7d75c",
+  };
+
+firebase.initializeApp(firebaseConfig)
+const db = firebase.firestore()
+if (localStorage.getItem("user")) {
+user = localStorage.getItem("user");
+console.log(user)
+}
+
 var theme = localStorage.getItem("theme");
 function setThemeAce() {
     var theme = localStorage.getItem("theme");
