@@ -45,7 +45,8 @@ editor.setOptions({
 })
 editor.resize()
 
-function runit(){
+
+async function runit(){
     var code = editor.getSession().getValue()
     /*$.post("https://python-interpreter1.herokuapp.com/input",{code: code} ,function(result) {
         console.log(result)

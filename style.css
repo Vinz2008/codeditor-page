@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue');
 :root {
     --text-color: #000000;
     --bkg-color: #fff;
@@ -200,7 +201,7 @@ nav {
   #homepage-img {
       width: 65%;
       height: 65%;
-      margin-left:13rem;
+      margin-left:10rem;
       
   }
   #img-text {
@@ -211,8 +212,10 @@ nav {
 
   #text-next-img {
       margin-top: 20rem;
-      margin-left: 3rem;
+      margin-left: 8rem;
       color: var(--top-text-color);
+      font-size: 5em;
+      font-family: Bebas Neue;
   }
 
   #background-top {
