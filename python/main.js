@@ -9,10 +9,13 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 const db = firebase.firestore()
-if (localStorage.getItem("user")) {
-user = localStorage.getItem("user");
-console.log(user)
+if (firebase.auth().currentUser != null) {
+    var user = firebase.auth().currentUser
+    console.log(`${user} logged in`)
+} else {
+    console.log("user not logged in")
 }
+
 
 var theme = localStorage.getItem("theme");
 function setThemeAce() {
