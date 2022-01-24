@@ -68,6 +68,7 @@ pre {
     color: var(--text-color);
 }
 button {
+    font-size: 1.5em;
     border: none;
     background-color: #8BE9FD;
     color: white;
@@ -144,7 +145,7 @@ iframe {
 
 nav {
     background-color: var(--nav-color);;
-    height: 45px;
+    height: 50px;
     margin: 0 0;
     padding: 0;
     box-shadow: 0 4px 24px 0 rgba(103,151,255,.1),0 12px 64px 0 rgba(103,151,255,.1);
@@ -156,7 +157,7 @@ nav {
     margin-left: 7px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 1.2em;
+    font-size: 1.3em;
     
 }
 
@@ -183,7 +184,7 @@ nav {
 }
   
 #btn-toggle {
-    font-size: 13px;
+    font-size: 1.1em;
     margin-top: 3px;
 }
 
@@ -224,3 +225,8 @@ nav {
   #background-top {
     background-color: var(--backgroundTop-color);
   }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}

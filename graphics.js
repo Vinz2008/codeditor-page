@@ -2,13 +2,38 @@ import * as THREE from './js/threejs/three.module.js';
 import { GLTFLoader } from './js/threejs/GLTFLoader.js';
 var container = document.getElementById('canvas');
 document.body.appendChild( container );
+
 const scene = new THREE.Scene();
+/*const fov = 75; // AKA Field of View
+const aspect = container.clientWidth / container.clientHeight;
+const near = 0.1; // the near clipping plane
+const far = 1000; // the far clipping plane
+
+const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);*/
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-const renderer = new THREE.WebGLRenderer({ alpha: true });
+const renderer = new THREE.WebGLRenderer(
+    {
+         alpha: true,
+         antialias: true, 
+    }
+);
+renderer.physicallyCorrectLights = true;
+function onResize() {
+    console.log("onResize");
+}
+
+function setSize(container, camera, renderer) {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio)
+}
+window.addEventListener("resize", onResize);
 var light = new THREE.PointLight(0xffffff);
 light.position.set(-1,2,1);
 scene.add(light);
 renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.setPixelRatio(window.devicePixelRatio)
 //document.body.appendChild( renderer.domElement );
 container.appendChild( renderer.domElement );
 camera.position.z = 0.4; 
@@ -28,16 +53,22 @@ loader.load( 'models/pc.glb', function ( gltf ) {
 	model.position.set( 1, 1, 0 );
 	model.scale.set( 0.01, 0.01, 0.01 );
 	scene.add( gltf.scene );
+    window.modelGlobal = model;
+
 
 }, undefined, function ( error ) {
 
 	console.error( error );
 
 } );
-function rotate_scrolling() {
-    model.rotate( 0, 0, 0 );
+function rotate_scrolling(model) {
+    window.modelGlobal.position.y = Math.pi / 2 ;
     console.log("rotate")
 }
+window.addEventListener('resize', () => {
+    setSize(container, camera, renderer)
+})
+//container.onscroll = rotate_scrolling(window.modelGlobal)
 animate()
 function animate() {
     requestAnimationFrame( animate );
