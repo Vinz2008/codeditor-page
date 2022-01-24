@@ -68,7 +68,6 @@ pre {
     color: var(--text-color);
 }
 button {
-    size: 30em;
     border: none;
     background-color: #8BE9FD;
     color: white;
@@ -76,9 +75,9 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 2em;
     border-radius: 40px;
     cursor:pointer;
+    font-size: 1.5em;
   }
 
 .button-screen-div {
@@ -91,6 +90,8 @@ button {
 }
 .button-screen {
     background-color: #48D06D;
+    size: 30em;
+    font-size: 2em;
 }
 
 iframe {
