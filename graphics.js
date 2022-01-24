@@ -1,5 +1,5 @@
-import * as THREE from '../js/threejs/three.module.js';
-import { GLTFLoader } from '/js/threejs/GLTFLoader.js';
+import * as THREE from './js/threejs/three.module.js';
+import { GLTFLoader } from './js/threejs/GLTFLoader.js';
 var container = document.getElementById('canvas');
 document.body.appendChild( container );
 const scene = new THREE.Scene();
