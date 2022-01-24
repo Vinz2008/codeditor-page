@@ -230,3 +230,23 @@ nav {
     max-width: 100%;
     overflow-x: hidden;
 }
+
+#text-top-3d {
+    margin-top: 20rem;
+
+      color: var(--text-color);
+      font-size: 5em;
+      font-family: Bebas Neue;
+      text-align: center;
+}
+
+canvas {
+    width: 70% !important; 
+    height: 1% !important; 
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}

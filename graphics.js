@@ -4,13 +4,15 @@ var container = document.getElementById('canvas');
 document.body.appendChild( container );
 
 const scene = new THREE.Scene();
-/*const fov = 75; // AKA Field of View
-const aspect = container.clientWidth / container.clientHeight;
-const near = 0.1; // the near clipping plane
-const far = 1000; // the far clipping plane
+/*const fov = 75; // AKA Field of View*/
+var height =window.innerHeight
+var width = window.innerWidth
+const aspect =  width / height
+/*const near = 0.1; // the near clipping plane
+const far = 1000; // the far clipping plane*/
 
-const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);*/
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+const camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
+//const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer(
     {
          alpha: true,
@@ -36,9 +38,9 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setPixelRatio(window.devicePixelRatio)
 //document.body.appendChild( renderer.domElement );
 container.appendChild( renderer.domElement );
-camera.position.z = 0.4; 
+camera.position.z = 0.32; 
 camera.position.x = 1; 
-camera.position.y = 1; 
+camera.position.y = 0.96; 
 /*const hemiLight = new THREE.HemisphereLight( 0xffffff, 0x444444 );
 hemiLight.position.set( 0, 10, 0 );
 scene.add( hemiLight );
@@ -50,7 +52,7 @@ scene.add( dirLight );*/
 const loader = new GLTFLoader();
 loader.load( 'models/pc.glb', function ( gltf ) {
     const model = gltf.scene;
-	model.position.set( 1, 1, 0 );
+	model.position.set( 1, 0.9, 0.1 );
 	model.scale.set( 0.01, 0.01, 0.01 );
 	scene.add( gltf.scene );
     window.modelGlobal = model;
