@@ -68,7 +68,7 @@ pre {
     color: var(--text-color);
 }
 button {
-    font-size: 1.5em;
+    font-size: 16px;
     border: none;
     background-color: #8BE9FD;
     color: white;
@@ -78,7 +78,6 @@ button {
     display: inline-block;
     border-radius: 40px;
     cursor:pointer;
-    font-size: 1.5em;
   }
 
 .button-screen-div {
@@ -92,7 +91,6 @@ button {
 .button-screen {
     background-color: #48D06D;
     size: 30em;
-    font-size: 2em;
 }
 
 iframe {
@@ -157,7 +155,6 @@ nav {
     margin-left: 7px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 1.3em;
     
 }
 
@@ -184,7 +181,6 @@ nav {
 }
   
 #btn-toggle {
-    font-size: 1.1em;
     margin-top: 3px;
 }
 
@@ -208,9 +204,10 @@ nav {
       margin-left:10rem;
       
   }
-  #img-text {
+  .img-text {
       display: flex;
       justify-content: flex-end;
+      margin-top: 2em;
 
   }
 
@@ -226,18 +223,13 @@ nav {
     background-color: var(--backgroundTop-color);
   }
 
-  html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
 
-#text-top-3d {
-    margin-top: 20rem;
-
-      color: var(--text-color);
-      font-size: 5em;
-      font-family: Bebas Neue;
-      text-align: center;
+.text-homepage-titles {
+    margin-top: 10rem;
+    color: var(--text-color);
+    font-size: 5em;
+    font-family: Bebas Neue;
+    text-align: center;
 }
 
 canvas {
@@ -249,4 +241,61 @@ canvas {
     margin-right: auto;
     display: block;
 
+}
+
+#ads-img {
+    margin-left:10rem;
+    position: relative;
+    margin-right: 1rem;
+    z-index:1;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    #text-next-img, #homepage-img {
+        float: left;
+        padding: 0;
+        width: 84%;
+        margin: 3%;
+    }
+    
+}
+
+
+@keyframes no-ads {
+    0% {
+        opacity: 0;
+        transform: translateX(-30rem) rotate(350deg);;
+      }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+}
+
+#macbook-img {
+    height: 50%;
+    width: 50%;
+    margin-left: 25%;
+}
+
+#even-on-your-laptop {
+    margin-bottom: 0.2em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ads-img-class {
+        animation-name: no-ads;
+        animation-duration: 2s;
+        animation-delay: 0.0s;
+
+    }
+}
+
+.img-text-ads {
+    display: flex;
+      justify-content: center;
+      margin-top: 2em;
+      margin-left: 0.5em;
 }
