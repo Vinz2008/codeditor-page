@@ -1,3 +1,4 @@
+var cloudPythonCode
 var firebaseConfig = {
     apiKey: "AIzaSyDBL3upiS5cgx8Q33FTYaBQivGowZ_u_o4",
     authDomain: "codeditor-8afc9.firebaseapp.com",
@@ -9,12 +10,20 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 const db = firebase.firestore()
-if (firebase.auth().currentUser != null) {
-    var user = firebase.auth().currentUser
-    console.log(`${user} logged in`)
+var userId = localStorage.getItem("userId")
+getCode()
+if (userId != null) {
+    getCode()
+    console.log(`${userId} logged in`)
+    cloudPythonCode = localStorage.getItem("cloudCode")
+    console.log(cloudPythonCode)
+    document.getElementById('mycode').innerHTML = cloudPythonCode
+    
 } else {
     console.log("user not logged in")
+    document.getElementById('mycode').innerHTML = "print('hello')"
 }
+
 
 
 var theme = localStorage.getItem("theme");
@@ -45,6 +54,59 @@ editor.setOptions({
 })
 editor.resize()
 
+var docName;
+async function sync() {
+    myCode = editor.getSession().getValue();
+    console.log(`My code syncing: ${myCode}`)
+    console.log(`userId: ${userId}`)
+
+    yourDoc = await db.collection('users')
+    .where("uid", "==", userId)
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            docName = doc.id
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+        })
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+    console.log(`docName: ${docName}`);
+    
+    
+    return db.collection('users').doc(docName).update({
+        python_code: myCode
+    })
+}
+
+async function getCode() {
+    yourDoc = await db.collection('users')
+    .where("uid", "==", userId)
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            docData = doc.data();
+            console.log(docData.python_code)
+            cloudPythonCode = docData.python_code
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+        })
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+    localStorage.setItem("cloudCode", cloudPythonCode)
+    return cloudPythonCode
+
+}
 
 async function runit(){
     output_div = document.getElementById("output")
@@ -64,12 +126,14 @@ async function runit(){
 
  var myCode = editor.getSession().getValue();
  function saveStaticDataToFile() {
+    myCode = editor.getSession().getValue();
     var blob = new Blob([myCode],
     { type: "text/plain;charset=utf-8" });
     saveAs(blob, "test.py");
  }
- editor.session.on('change', function(delta) {
+ editor.session.on('change', async function(delta) {
 console.log(editor.getSession().getValue())
+await sync()
  });
 
 

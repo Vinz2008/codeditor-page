@@ -74,6 +74,8 @@ async function isUserAlreadyExisting(user) {
 
 auth.onAuthStateChanged(user => {
   if (user) {
+    localStorage.setItem("userId", user.uid);
+    localStorage.setItem("userDisplayName", user.displayName);
     /*result = await db
 	.collection('users')
 	.where("uid", "==", user.uid)
