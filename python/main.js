@@ -1,13 +1,3 @@
-const pageAccessedByReload = (
-    (window.performance.navigation && window.performance.navigation.type === 1) ||
-      window.performance
-        .getEntriesByType('navigation')
-        .map((nav) => nav.type)
-        .includes('reload')
-  );
-
- 
-
 var cloudPythonCode
 var firebaseConfig = {
     apiKey: "AIzaSyDBL3upiS5cgx8Q33FTYaBQivGowZ_u_o4",
