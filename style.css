@@ -5,6 +5,8 @@
     --nav-color: #fff;
     --backgroundTop-color: #4C3AD8;
     --top-text-color: #fff;
+    --parameter-border: #50FA7B;
+    --output-border: #000000;
   }
   body.dark-theme {
     --text-color: #BD93F9;
@@ -30,7 +32,7 @@
 }
 #big-output {
     justify-content: flex-end;
-    border:1px solid black;
+    border:1px solid var(--output-border);
     border-radius: 20px;
     width: 28rem;
     height: 25rem;
@@ -113,7 +115,7 @@ iframe {
     height: 18em;
     margin-top: -9em;
     margin-left: -15em;
-    border: 1px solid #50FA7B;
+    border: 1px solid var(--parameter-border);
     background-color: var(--bkg-color);;
     position: absolute;
     z-index:1000;
@@ -212,7 +214,7 @@ nav {
   }
 
   #text-next-img {
-      margin-top: 20rem;
+      margin-top: 13rem;
       margin-left: 8rem;
       color: var(--top-text-color);
       font-size: 5em;
@@ -298,4 +300,17 @@ canvas {
       justify-content: center;
       margin-top: 2em;
       margin-left: 0.5em;
+}
+
+#button-next-img {
+    margin-top: 0.5rem;
+    margin-left: 8rem;
+}
+
+.text-button {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+
 }

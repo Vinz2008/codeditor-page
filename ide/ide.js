@@ -11,7 +11,9 @@ function setThemeAce() {
 var editor = ace.edit("mycode");
 editor.setTheme("ace/theme/github");
 
-function runit(){
+async function runit(){
+    output_div = document.getElementById("output")
+    output_div.innerHTML = "Loading..."
     var code = editor.getSession().getValue()
     /*$.post("https://python-interpreter1.herokuapp.com/input",{code: code} ,function(result) {
         console.log(result)
@@ -19,9 +21,10 @@ function runit(){
     });*/
     console.log("code: " + code)
     output = run(code)
+    setTimeout(function(){
     console.log("output: " + output)
-    output_div = document.getElementById("output")
     output_div.innerHTML = output
+    },4000);
 }
 
 var buttonTheme = document.getElementById('btn-toggle')
@@ -73,6 +76,17 @@ function change_vim_mode() {
         editor.setOptions({
             keyboardHandler: null,
         });
+    }
+}
+
+var runButton = document.getElementById("runButton")
+var select_runtime = document.getElementById("runtime")
+function change_runtime() {
+    if (select_runtime.options[select_runtime.selectedIndex].value == "python") {
+        runButton.style.visibility = 'visible';
+    }
+    if (select_runtime.options[select_runtime.selectedIndex].value == "none") {
+        runButton.style.visibility = 'hidden';  
     }
 }
 

@@ -37,12 +37,11 @@ function run(code) {
 ).then(function (response) { 
     return response.text();
 }).then(function (text) {
-
-    console.log('POST response: ');
+    globalThis.output = ""
+    console.log('POST response: ' + text);
 
     // Should be 'OK' if everything was successful
-    console.log(text);
-    globalThis.output = text
+    output = text
     reg2 = /\n/g
 var newOutput
 newOutput = output.toString().replace(reg2, "<br>")
@@ -55,5 +54,8 @@ return output;
 }*/
 
 });
-return output;
+setTimeout(function() {
+    return output;
+}, 4500 )
+
 }

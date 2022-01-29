@@ -8,6 +8,8 @@ function dark() {
     r.style.setProperty('--nav-color', '#282A36');
     r.style.setProperty('--backgroundTop-color', '#383A59');
     r.style.setProperty('--top-text-color', '#BD93F9');
+    r.style.setProperty('--parameter-border', '#BD93F9');
+    r.style.setProperty('--output-border', '#BD93F9');
     btn.innerHTML = "light"
 }
 function light() {
@@ -18,6 +20,8 @@ function light() {
     r.style.setProperty('--backgroundTop-color', '#4C3AD8');
     r.style.setProperty('--text-color', '#000000');
     r.style.setProperty('--top-text-color', '#FFFFFF');
+    r.style.setProperty('--parameter-border', '#50FA7B');
+    r.style.setProperty('--output-border', '#000000');
     btn.innerHTML = "dark"
 }
 

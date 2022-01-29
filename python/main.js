@@ -47,6 +47,8 @@ editor.resize()
 
 
 async function runit(){
+    output_div = document.getElementById("output")
+    output_div.innerHTML = "Loading..."
     var code = editor.getSession().getValue()
     /*$.post("https://python-interpreter1.herokuapp.com/input",{code: code} ,function(result) {
         console.log(result)
@@ -54,9 +56,10 @@ async function runit(){
     });*/
     console.log("code: " + code)
     output = run(code)
+    setTimeout(function(){
     console.log("output: " + output)
-    output_div = document.getElementById("output")
     output_div.innerHTML = output
+    },4000);
 }
 
  var myCode = editor.getSession().getValue();
@@ -65,7 +68,9 @@ async function runit(){
     { type: "text/plain;charset=utf-8" });
     saveAs(blob, "test.py");
  }
- 
  editor.session.on('change', function(delta) {
 console.log(editor.getSession().getValue())
  });
+
+
+
