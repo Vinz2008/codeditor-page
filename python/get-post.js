@@ -18,6 +18,8 @@ fetch('/python')
 */
 
 function run(code) {
+    var url = "https://python-interpreter1.herokuapp.com/input"
+    //var url = "https://code-editor-page-api-python-vinz2008.vercel.app/input"
     reg1 = /"/g
     code = code.replace(reg1,"'")
     console.log("input after regex: " + code)
@@ -33,7 +35,7 @@ function run(code) {
         },
         
     };
- fetch('https://python-interpreter1.herokuapp.com/input'/*'http://localhost:8000/input'*/, options
+ fetch(url/*'http://localhost:8000/input'*/, options
 ).then(function (response) { 
     return response.text();
 }).then(function (text) {
