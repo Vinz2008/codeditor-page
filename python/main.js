@@ -116,14 +116,46 @@ async function runit(){
     /*$.post("https://python-interpreter1.herokuapp.com/input",{code: code} ,function(result) {
         console.log(result)
 
-    });*/
+    });*/ 
     console.log("code: " + code)
     output = run(code)
     setTimeout(function(){
     console.log("output: " + output)
+    if (output == undefined) {
+        console.log("There was an error. Retry")
+        ouput = "There was an error. Retry"
+    }
     output_div.innerHTML = output
     },4000);
 }
+/*
+var output
+async function main() {
+    let pyodide = await loadPyodide({
+      indexURL: "https://cdn.jsdelivr.net/pyodide/v0.19.0/full/",
+    });;
+    return pyodide;
+}
+let pyodideReadyPromise = main();
+
+async function runit(){
+    output_div = document.getElementById("output")
+    output_div.innerHTML = "Loading..."
+    var code = editor.getSession().getValue()
+    console.log("code: " + code)
+    let pyodide = await pyodideReadyPromise;
+    console.log(pyodide.runPython(code))
+
+        try {
+            output = await pyodide.runPython(code);
+        } catch (err) {
+          console.error(err);
+        }
+    console.log("output: " + output)
+    output_div.innerHTML = output
+
+}
+*/
 
  var myCode = editor.getSession().getValue();
  function saveStaticDataToFile() {
