@@ -36,10 +36,10 @@ function saveStaticDataToFile() {
 }
 
 var myCode = editor.getSession().getValue();
-document.getElementById('markdown-content').innerHTML = marked.parse(myCode);
+document.getElementById('output').innerHTML = marked.parse(myCode);
 
 editor.session.on('change', function(delta) {
     var myCode = editor.getSession().getValue();
-document.getElementById('markdown-content').innerHTML = marked.parse(myCode);
+document.getElementById('output').innerHTML = marked.parse(myCode);
 
 });

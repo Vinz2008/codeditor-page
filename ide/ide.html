@@ -31,6 +31,7 @@
 <select name="language" id="language" onchange="change_language()">
 <option value="Python" selected>Python</option>
 <option value="Javascript">Javascript</option>
+<option value="Markdown">Markdown</option>
 </select>
 <br>
 <label for="vim-mode">Select if the Vim mode is activated:</label>
@@ -43,15 +44,18 @@
 <select name="file_type" id="file_type" onchange="change_file_type();">
     <option value="Python" selected>.py</option>
     <option value="JS">.js</option>
+    <option value="Markdown">.md</option>
+
 </select>
 <br>
 <label for="runtime">Choose a runtime:</label>
 <select name="runtime" id="runtime" onchange="change_runtime()">
-<option value="python" selected>Python</option>
-<option value="none">None</option>
+<option value="python">Python</option>
+<option value="markdown">Markdown</option>
+<option value="none" selected>None</option>
 </select>
 </div>
-<button class="other-button" type="button" onclick="runit()" id="runButton">Run</button>
+<button class="other-button" type="button" onclick="runit()" id="runButton" style="visibility: hidden;">Run</button>
 <br>
 <br>
 <button class="other-button" type="button" onclick="saveStaticDataToFile();">Click to Save</button>
@@ -64,11 +68,16 @@
 </div>
 <script src="../python/get-post.js"></script>
 <script src="../js/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
 <br>
 <br>
 <br>
 <br>
 <button id="parameters_button" class="other-button" onclick="showParameters();"> <i class="fa fa-bars"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="ide.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="../theme.js"></script>
 </body>

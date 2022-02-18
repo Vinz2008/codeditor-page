@@ -99,7 +99,8 @@ auth.onAuthStateChanged(user => {
     userRef.add({
       uid: user.uid,
       name: user.displayName,
-      python_code: ""
+      python_code: "",
+      ide_code: ""
     });
     console.log("user added")
   }
