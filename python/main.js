@@ -170,4 +170,12 @@ await sync()
  });
 
 
-
+ document.addEventListener('keydown', e => {
+    if (e.ctrlKey && e.key === 's') {
+    // Prevent the Save dialog to open
+    e.preventDefault();
+    // Place your code here
+    console.log('CTRL + S');
+    saveStaticDataToFile();
+    }
+    });

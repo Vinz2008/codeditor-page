@@ -43,3 +43,12 @@ editor.session.on('change', function(delta) {
 document.getElementById('output').innerHTML = marked.parse(myCode);
 
 });
+document.addEventListener('keydown', e => {
+    if (e.ctrlKey && e.key === 's') {
+    // Prevent the Save dialog to open
+    e.preventDefault();
+    // Place your code here
+    console.log('CTRL + S');
+    saveStaticDataToFile();
+    }
+    });

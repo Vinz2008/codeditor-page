@@ -25,6 +25,8 @@ auth.signInWithPopup(provider);
 
 function signOut() {
 auth.signOut();
+localStorage.removeItem("userId");
+localStorage.removeItem("userDisplayName");
 }
 
 auth.onAuthStateChanged(user => {

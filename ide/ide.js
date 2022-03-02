@@ -11,10 +11,12 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig)
   const db = firebase.firestore()
   var userId = localStorage.getItem("userId")
-
+  if (userId != null) {
   getCode()
+  }
   var runButton = document.getElementById("runButton")
   if (userId != null) {
+    IsUserLoggedIn = true
     getCode()
     console.log(`${userId} logged in`)
     cloudIdeCode = localStorage.getItem("cloudCode")
@@ -24,6 +26,7 @@ var firebaseConfig = {
     
 } else {
     console.log("user not logged in")
+    IsUserLoggedIn = false
     if (select_language.options[select_language.selectedIndex].value == "Python") {
         document.getElementById('mycode').innerHTML = "print('hello')"
     }
@@ -249,6 +252,19 @@ if(buttonTheme.clicked == true) {
 
 editor.session.on('change', async function(delta) {
     console.log(editor.getSession().getValue())
-    await sync()
+    console.log("IsUserLoggedIn " + IsUserLoggedIn)
+    if(IsUserLoggedIn == true) {
+        await sync()
+    }
      });
     
+
+document.addEventListener('keydown', e => {
+if (e.ctrlKey && e.key === 's') {
+// Prevent the Save dialog to open
+e.preventDefault();
+// Place your code here
+console.log('CTRL + S');
+saveStaticDataToFile();
+}
+});
