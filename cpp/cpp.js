@@ -13,7 +13,7 @@ document.getElementById('mycode').innerHTML = ""
 var editor = ace.edit("mycode");
 editor.setTheme("ace/theme/github")
 
-editor.session.setMode("ace/mode/markdown");
+editor.session.setMode("ace/mode/c_cpp");
 editor.setOptions({
     maxLines: 33,
     minLines: 28,
