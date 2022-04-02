@@ -126,7 +126,7 @@ async function runit(){
         ouput = "There was an error. Retry"
     }
     output_div.innerHTML = output
-    },4000);
+    },700);
 }
 /*
 var output

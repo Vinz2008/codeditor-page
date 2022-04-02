@@ -36,6 +36,8 @@ var firebaseConfig = {
 
 }
 
+var runtimeVar = localStorage.getItem("runtime");
+
 var theme = localStorage.getItem("theme");
 function setThemeAce() {
     var theme = localStorage.getItem("theme");
@@ -62,7 +64,7 @@ async function runitPython(){
     setTimeout(function(){
     console.log("output: " + output)
     output_div.innerHTML = output
-    },4000);
+    },1000);
 }
 
 function runitMarkdown() {
@@ -182,6 +184,13 @@ function change_vim_mode() {
     }
 }
 var runtime = "none"
+
+var runtimeVar = localStorage.getItem("runtime");
+var runButton = document.getElementById("runButton")
+if (runtimeVar == "python" || runtimeVar == "markdown") {
+    runButton.style.visibility = 'visible';
+}
+runtime = runtimeVar
 var runButton = document.getElementById("runButton")
 var select_runtime = document.getElementById("runtime")
 runButton.addEventListener("click", function() {
@@ -208,6 +217,7 @@ function change_runtime() {
         runButton.style.visibility = 'visible'; 
         runtime = "markdown" 
     }
+    localStorage.setItem("runtime", runtime);
 }
 
 var parameters_button = document.getElementById("parameters_div")

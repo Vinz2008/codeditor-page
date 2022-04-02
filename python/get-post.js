@@ -56,8 +56,9 @@ return output;
 }*/
 
 });
-setTimeout(function() {
+/*setTimeout(function() {
     return output;
-}, 4500 )
+}, 4500 )*/
+    return output
 
 }
